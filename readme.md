@@ -1,5 +1,8 @@
 # OneGet
-
+<hr><hr>
+## NOTE: YOU ARE LOOKING AT THE CTP BRANCH.
+## THIS CODE IS FOR REFERENCE PURPOSE ONLY, NEW WORK IS ONLY DONE IN THE `wip` and `master` branches.
+<hr><hr>
 ## Team Members
 
 | Branch | Purpose |
