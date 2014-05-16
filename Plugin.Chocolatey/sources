@@ -1,0 +1,56 @@
+# Copyright (C) 2014 Microsoft Corporation
+
+#CLSCompliant        = true
+
+TARGETNAME          = Microsoft.OneGet.Plugin.Chocolatey
+TARGETTYPE          = DYNLINK
+TARGET_DESTINATION  = monad
+# this will make AssemblyVersion = 1.0.0.0
+ASSEMBLY_IDENTITY_VERSION_NAME=monadv1
+
+MANAGED_CODE        = 1
+URT_VER=4.5
+
+REFERENCES=\
+	$(OBJ_PATH)\..\OneGet.Utility\$(O)\Microsoft.OneGet.Utility.metadata_dll; \
+	$(OBJ_PATH)\..\OneGet.API\$(O)\Microsoft.OneGet.metadata_dll; \
+	$(OBJ_PATH)\..\OneGet\$(O)\Microsoft.PowerShell.OneGet.metadata_dll; \
+	$(OBJ_PATH)\..\Plugin.PowerShell\$(O)\Microsoft.OneGet.Plugin.PowerShell.metadata_dll; \
+	$(CLR_REF_PATH)\Microsoft.CSharp.metadata_dll; \
+	$(CLR_REF_PATH)\System.metadata_dll; \
+	$(CLR_REF_PATH)\System.ComponentModel.Composition.metadata_dll; \
+	$(CLR_REF_PATH)\System.Core.metadata_dll; \
+	$(CLR_REF_PATH)\..\System.Management.Automation.metadata_dll; \
+	$(CLR_REF_PATH)\System.Xml.metadata_dll; \
+	$(CLR_REF_PATH)\System.Xml.Linq.metadata_dll; \
+	$(CLR_REF_PATH)\System.Data.metadata_dll; \
+	$(CLR_REF_PATH)\System.Data.DataSetExtensions.metadata_dll
+
+#region sourcefiles
+SOURCES=\
+	CmdLets\InvokeChocolateyScript.cs \
+ 	CmdLets\PublishChocolateyPackage.cs \
+ 	CmdLets\WriteChocolateyPackage.cs \
+ 	CallbackExtensions.cs \
+ 	ChocolateyPackageProvider.cs \
+ 	ChocolateyPlugin.cs \
+ 	ChocolateyScript.cs \
+ 	ChocolateyState.cs \
+ 	Dispatcher.cs \
+ 	NuGet.cs \
+ 	PackageReference.cs \
+ 	PackageSource.cs \
+ 	Snapshot.cs
+
+#endregion
+
+
+
+
+PASS0_BINPLACE=\
+	Chocolatey.psd1 \
+	Chocolatey.format.ps1xml \
+	etc\Helpers.psd1 \
+	etc\Helpers.psm1 \
+	etc\Chocolatey.config
+
